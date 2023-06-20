@@ -27,11 +27,11 @@ func main() {
 		numbers = append(numbers, num)
 	}
 
-	sum := addition(numbers)
-	fmt.Println(sum)
+	//sum := addition(numbers)
+	//fmt.Println(sum)
 
-	sub := subtract(numbers)
-	fmt.Println(sub)
+	//sub := subtract(numbers)
+	//fmt.Println(sub)
 
 	mul := multiply(numbers)
 	fmt.Println(mul)
@@ -60,7 +60,7 @@ func subtract(numbers []float64) float64 {
 }
 
 func multiply(numbers []float64) float64 {
-	var mul float64
+	var mul float64 = 1
 	for _, num := range numbers {
 		mul *= num
 	}
@@ -68,9 +68,14 @@ func multiply(numbers []float64) float64 {
 }
 
 func divide(numbers []float64) float64 {
-	var div float64
-	for _, num := range numbers {
-		div /= num
+
+	if len(numbers) == 0 {
+		return 0.0
+	}
+
+	div := numbers[0]
+	for i := 1; i < len(numbers); i++ {
+		div /= numbers[i]
 	}
 	return div
 }
