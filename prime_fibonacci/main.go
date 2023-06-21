@@ -23,7 +23,6 @@ func generatePrimes(limit int) []int {
 		}
 	}
 	return primes
-
 }
 
 // Check if a number is prime
